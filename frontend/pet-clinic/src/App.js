@@ -54,11 +54,10 @@ const handelAddNewUser = (newUser) => {
   return (
     <div className='container'>
         <Header />
-<<<<<<< Updated upstream
-        <BrowserRouter>
-=======
+
+
         <NavigationBar /> 
->>>>>>> Stashed changes
+
 
           <Routes>
             <Route path="*" element={<NotFound />} />
