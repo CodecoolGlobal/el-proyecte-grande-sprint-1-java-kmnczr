@@ -13,7 +13,7 @@ const NavigationBar = ({searchOwnerByName}) => {
 
     return (
 
-        <Navbar bg="light" expand="lg" sticky="top">
+        <Navbar className="nav">
             <Container fluid>
                 {/* <Image roundedCircle src={logo} width={80} /> */}
                 <Navbar.Brand href="#">  Pet Clinic</Navbar.Brand>
@@ -46,8 +46,8 @@ const NavigationBar = ({searchOwnerByName}) => {
                             className="me-2"
                             aria-label="Search"
                         />
-                        <Button  type="submit" variant="outline-success">Search</Button>
-                    </Form>
+                            <Button type="submit" variant="secondary">Search</Button>
+                        </Form>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

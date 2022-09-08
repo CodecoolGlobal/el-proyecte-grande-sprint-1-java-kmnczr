@@ -12,7 +12,7 @@ const ListAllOwners = ({owners, handleDelete, handleGetDetails}) => {
 
       <Table striped bordered hover>
       <thead>
-        <tr>
+        <tr className="table-header">
           <th>Name</th>
           <th>e-mail</th>
           <th>Details</th>
@@ -22,13 +22,15 @@ const ListAllOwners = ({owners, handleDelete, handleGetDetails}) => {
        <tbody>
         {owners.map((owner, key) => {
           return (
-            <tr key={key}>
+            <tr key={key} className="table-row">
               <td>{owner.firstName}  {owner.lastName}</td>
               <td>{owner.email}</td>
               <td>
-                <Link to={`/owners/${owner.id}`}><button className="btn btn-outline-secondary">Details</button> </Link>
+                <Link to={`/owners/${owner.id}`}><button className="btn btn-secondary">Details</button> </Link>
               </td>
-              <td><button className="btn btn-outline-secondary" onClick={() => handleDelete(owner.id)}>Delete</button>  </td>
+              <td>
+                  <button className="btn btn-secondary" onClick={() => handleDelete(owner.id)}>Delete</button>
+              </td>
             </tr>
           )
         })}

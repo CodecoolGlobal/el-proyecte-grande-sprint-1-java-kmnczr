@@ -9,7 +9,7 @@ import pets from '../../src/images/pets.jpg'
 
 export default function App() {
   return (
-    <MDBFooter bgColor='light' className='text-center text-lg-left'>
+    <MDBFooter bgColor='light' className='text-center text-lg-left' >
       <MDBContainer className='p-4'>
         <MDBRow>
           <MDBCol lg='6' md='12' className='mb-4 mb-md-0'>
