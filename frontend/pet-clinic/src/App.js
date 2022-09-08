@@ -70,7 +70,7 @@ const handelAddNewUser = (newUser) => {
                 <Route path="add" element={<AddNewUser handelAddNewUser={handelAddNewUser}/> } />
                 <Route path="search/:name" element={<ListAllOwners owners={searchedOwner}
                                                                         handleDelete={handleDelete}
-                                                                        handleGetDetails={handleGetDetails}/> } />
+                                                                       /> } />
 
             </Route>
             <Route path="pets/add/:ownerId" element={<AddNewPet handelAddNewPet={handelAddNewPet}/> } />

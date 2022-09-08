@@ -5,6 +5,7 @@ import {
   MDBCol,
   MDBRow
 } from 'mdb-react-ui-kit';
+import pets from '../../src/images/pets.jpg'
 
 export default function App() {
   return (
@@ -15,20 +16,14 @@ export default function App() {
             <h5 className='text-uppercase'>Footer text</h5>
 
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis molestias.
-              Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam voluptatem veniam,
-              est atque cumque eum delectus sint!
+              “Some people talk to animals. Not many listen though. That's the problem.”
             </p>
           </MDBCol>
 
           <MDBCol lg='6' md='12' className='mb-4 mb-md-0'>
-            <h5 className='text-uppercase'>Footer text</h5>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis molestias.
-              Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam voluptatem veniam,
-              est atque cumque eum delectus sint!
-            </p>
+            <div className='flexcontainer'>
+              <img src={pets} width={500} alt="pets" />
+            </div>
           </MDBCol>
         </MDBRow>
       </MDBContainer>
