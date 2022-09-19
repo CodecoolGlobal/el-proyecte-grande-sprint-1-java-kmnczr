@@ -6,14 +6,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import OwnerDetails from './components/OwnerDetails';
 import AddNewUser from './components/AddNewUser';
 import AddNewPet from './components/AddNewPet';
+import PetDetails from './components/PetDetails';
 import NavigationBar from "./components/NavigationBar";
 import NotFound from './components/NotFound';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import { Route, Routes, useNavigate } from 'react-router-dom';
+import AddNewVisit from "./components/AddNewVisit";
+import Login from "./components/Login/Login";
 
 
 function App() {
+
 
   let navigate = useNavigate();
 
@@ -28,6 +32,14 @@ function App() {
     apiDelete('http://localhost:8080/owners/' + ownerId).then(getOwners).then(navigate("/owners"));
   }
 
+  const handleDeleteVisit = (visitId) => {
+    apiDelete('http://localhost:8080/visits/delete/' + visitId).then(navigate(0))
+  }
+
+  const handleDeletePet = (petId) => {
+    apiDelete('http://localhost:8080/pets/' + petId).then(getOwners).then(navigate(-1));
+  }
+
 const handelAddNewUser = (newUser) => {
   apiPost("http://localhost:8080/owners/add", newUser).then(getOwners).then(navigate("/owners"))
 }
@@ -37,7 +49,11 @@ const handelAddNewUser = (newUser) => {
   }
 
   const handelAddNewPet = (newPet, ownerId) => {
-    apiPost("http://localhost:8080/pets/add/"+ ownerId, newPet).then(navigate("/owners/"+ownerId))
+    apiPost("http://localhost:8080/pets/add/"+ ownerId, newPet).then(navigate(-1).then(navigate(0)))
+  }
+
+  const handleAddNewVisit = (newVisit, petId) => {
+    apiPost("http://localhost:8080/visits/add/"+ petId, newVisit).then(navigate(-1))
   }
 
   const searchOwnerByName = async (name) => {
@@ -62,18 +78,22 @@ const handelAddNewUser = (newUser) => {
           <Routes>
             <Route path="*" element={<NotFound />} />
             <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/owners">
                 <Route index element={<ListAllOwners owners={owners} 
                     handleDelete={handleDelete} />} />
                 <Route path=":ownerId" element={<OwnerDetails  
-                    handleUpdateUser={handelUpdateUser}/>} />
+                    handleUpdateUser={handelUpdateUser} handleDelete={handleDelete}/>} />
                 <Route path="add" element={<AddNewUser handelAddNewUser={handelAddNewUser}/> } />
                 <Route path="search/:name" element={<ListAllOwners owners={searchedOwner}
-                                                                        handleDelete={handleDelete}
-                                                                       /> } />
+                                                                        handleDelete={handleDelete}/> } />
 
             </Route>
             <Route path="pets/add/:ownerId" element={<AddNewPet handelAddNewPet={handelAddNewPet}/> } />
+
+            <Route path="pets/:petId" element={<PetDetails handleDeleteVisit={handleDeleteVisit} handleDeletePet={handleDeletePet}/>} />
+            <Route path="visits/add/:petId" element={<AddNewVisit handleAddNewVisit={handleAddNewVisit}/>} />
+
 
             {/* <Route path="pets/:ownerId" element={<AllPetsOfOwner/>} />
             <Route path="pets/add/:ownerId" element={<AllPetsOfOwner/>} />
