@@ -23,6 +23,7 @@ import useAuth from './hooks/useAuth';
 import PersistLogin from './components/PersistLogin';
 import Logout from './components/Login/Logout';
 import useAxiosPrivate from "./hooks/useAxiosPrivate";
+import ContactUs from "./components/contact/ContactUs";
 
 
 function App() {
@@ -122,6 +123,8 @@ function App() {
             <Route path="/unauthorized" element={<Unauthorized />} />
             <Route path="/users" element={<Users />} />
             <Route path="/logout" element={<Logout />} />
+          <Route path="/contactus" element={<ContactUs />} />
+
             
 
             <Route element={<PersistLogin />}>
