@@ -124,7 +124,6 @@ function App() {
             <Route path="/users" element={<Users />} />
             <Route path="/logout" element={<Logout />} />
           <Route path="/contactus" element={<ContactUs />} />
-
             
 
             <Route element={<PersistLogin />}>

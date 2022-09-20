@@ -25,9 +25,14 @@ code {
 }
 
 .container{
-  width: 400px;
+  width: 600%;
   margin: auto;
   border: 3px solid lightgray;
+}
+
+.unauth {
+  text-align: center;
+  background-color: #5CB5B5;
 }
 
 .nav {
