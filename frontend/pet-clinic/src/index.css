@@ -52,7 +52,17 @@ code {
   text-align: center;
 }
 
+.p-4 {
+  background-color: white;
+}
 
+.footer-text {
+  text-align: center;
+}
 
+.logged-out-text {
+  text-align: center;
+  background-color: #5CB5B5;
+}
 
 

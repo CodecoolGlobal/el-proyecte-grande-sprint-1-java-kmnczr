@@ -13,9 +13,7 @@ export default function App() {
       <MDBContainer className='p-4'>
         <MDBRow>
           <MDBCol lg='6' md='12' className='mb-4 mb-md-0'>
-            <h5 className='text-uppercase'>Footer text</h5>
-
-            <p>
+            <p className="footer-text">
               “Some people talk to animals. Not many listen though. That's the problem.”
             </p>
           </MDBCol>
