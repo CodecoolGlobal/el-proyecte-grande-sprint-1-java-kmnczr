@@ -56,7 +56,7 @@ const ListAllOwners = () => {
    
 
       <Table striped bordered hover>
-      <thead>
+      <thead className="table-header">
         <tr>
           <th>Name</th>
           <th>e-mail</th>
@@ -67,7 +67,7 @@ const ListAllOwners = () => {
        <tbody>
         {owners.map((owner, key) => {
           return (
-            <tr key={key}>
+            <tr key={key} className="table-row">
               <td>{owner.firstName}  {owner.lastName}</td>
               <td>{owner.email}</td>
               <td>

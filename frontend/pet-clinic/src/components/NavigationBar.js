@@ -18,7 +18,7 @@ const NavigationBar = ({searchOwnerByName}) => {
     return (
 
         <Navbar bg="light" expand="lg" sticky="top">
-            <Container fluid>
+            <Container fluid className="nav">
                 {/* <Image roundedCircle src={logo} width={80} /> */}
                 <Navbar.Brand href="#">  Pet Clinic</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
@@ -55,7 +55,9 @@ const NavigationBar = ({searchOwnerByName}) => {
                             className="me-2"
                             aria-label="Search"
                         />
-                        <Button  type="submit" variant="outline-success">Search</Button>
+                        <Link to={"/"}><NavDropdown.Item href="/">You are logged in as: {auth.user}</NavDropdown.Item></Link>
+                        <button type="button" className="btn btn-outline-secondary" data-mdb-ripple-color="dark">Search</button>
+
                     </Form>
 
 
@@ -64,8 +66,8 @@ const NavigationBar = ({searchOwnerByName}) => {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                    <Link to={"/"}><NavDropdown.Item href="/">You are logged in as: {auth.user}</NavDropdown.Item></Link>
-                    <Link to={"/logout"}><Button  type="submit" variant="outline-success">Log out</Button></Link>
+
+                    <Link to={"/logout"}><button type="button" className="btn btn-outline-secondary" data-mdb-ripple-color="dark">Log Out</button></Link>
                     </Nav>
 
 
