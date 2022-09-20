@@ -1,10 +1,11 @@
 import React from 'react'
+import myImage from "../images/notfound.jpg";
 
 const NotFound = () => {
   return (
-    <div>
-      "This is a Page-Not-Found message."
-    </div>
+      <div className='notfound'>
+          <img src={myImage} width={500} alt="notfound" />
+      </div>
   )
 }
 
