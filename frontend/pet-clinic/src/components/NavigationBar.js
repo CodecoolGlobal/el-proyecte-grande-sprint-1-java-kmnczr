@@ -36,7 +36,7 @@ const NavigationBar = ({searchOwnerByName}) => {
                             <Link to={"/"}><NavDropdown.Item href="/">Clinic information</NavDropdown.Item></Link>
                             <Link to={"/"}><NavDropdown.Item href="/">Developers of the application</NavDropdown.Item></Link>
                             <Link to={"/contactus"}><NavDropdown.Item href="/">Contact the Developers</NavDropdown.Item></Link>
-                            <Link to={"/"}><NavDropdown.Item href="/">FAQs</NavDropdown.Item></Link>
+                            <Link to={"/faqs"}><NavDropdown.Item href="/">FAQs</NavDropdown.Item></Link>
                             <Link to={"/"}><NavDropdown.Item href="/">FAQs</NavDropdown.Item></Link>
                             <Link to={`/`}><NavDropdown.Item href="#action4">
                                 Another action
