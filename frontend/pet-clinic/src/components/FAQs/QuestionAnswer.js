@@ -6,7 +6,7 @@ function AppFaqs() {
     return(
         <div class="block faqBlock">
             <div className="container-fluid">
-                <Collapse defaultActiveKey={['1']}>
+                <Collapse defaultActiveKey={['1']} className="faqs-panel">
                     <Panel header="How can I add my animal to this website?" key="1">
                         <p>You just need to be a user and then click Owners and add new pet. </p>
                     </Panel>
