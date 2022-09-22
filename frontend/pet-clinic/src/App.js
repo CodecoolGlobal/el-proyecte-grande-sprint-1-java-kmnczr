@@ -20,12 +20,11 @@ import ClientPets from './components/forclients/ClientPets';
 import ClientPetDetails from './components/forclients/ClientPetDetails';
 import Users from './components/Users';
 import useAuth from './hooks/useAuth';
-import PersistLogin from './components/PersistLogin';
 import Logout from './components/Login/Logout';
 import useAxiosPrivate from "./hooks/useAxiosPrivate";
 import ContactUs from "./components/contact/ContactUs";
 import QuestionAnswer from "./components/FAQs/QuestionAnswer";
-import ListSearchedOwners from "./components/owner/ListSearchedOwners"
+import ListSearchedOwners from "./components/owner/ListSearchedOwners";
 
 
 function App() {
