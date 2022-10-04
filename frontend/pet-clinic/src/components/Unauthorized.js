@@ -3,7 +3,7 @@ import myImage from '../images/stop.jpg'
 const Unauthorized = () => {
     const navigate = useNavigate();
 
-    //const goBack = () => navigate(-1);
+    const goBack = () => navigate(-1);
 
     return (
         <section className='unauth'>

@@ -188,3 +188,11 @@ form > .button:hover {
   align-items: center;
   justify-content: center;
 }
+
+.notfound {
+  text-align: center;
+}
+
+.unauth {
+  text-align: center;
+}

@@ -26,7 +26,6 @@ import ContactUs from "./components/contact/ContactUs";
 import QuestionAnswer from "./components/FAQs/QuestionAnswer";
 import ListSearchedOwners from "./components/owner/ListSearchedOwners";
 import DeveloperInfo from "./components/developerInfo/DeveloperInfo";
-import ListSearchedOwners from "./components/owner/ListSearchedOwners"
 import SearchOwners from './components/owner/SearchOwners';
 import NavBarForClients from './components/forclients/NavBarForClients';
 
