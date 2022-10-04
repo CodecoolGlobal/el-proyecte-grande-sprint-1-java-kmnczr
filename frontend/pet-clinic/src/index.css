@@ -196,3 +196,7 @@ form > .button:hover {
 .unauth {
   text-align: center;
 }
+
+.logged-out-text {
+  text-align: center;
+}
