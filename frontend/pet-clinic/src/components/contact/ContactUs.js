@@ -1,62 +1,44 @@
-import React, { useState } from "react";
-
-const FORM_ENDPOINT = "https://public.herotofu.com/v1/EXAMPLE_FORM_ID";
-
+import React from 'react'
 const ContactForm = () => {
-    const [submitted, setSubmitted] = useState(false);
-    const handleSubmit = () => {
-        setTimeout(() => {
-            setSubmitted(true);
-        }, 100);
-    };
-
-    if (submitted) {
-        return (
-            <>
-                <div className="text-2xl">Thank you!</div>
-                <div className="text-md">We'll be in touch soon.</div>
-            </>
-        );
+    const [formStatus, setFormStatus] = React.useState('Send')
+    const onSubmit = (e) => {
+        e.preventDefault()
+        setFormStatus('Submitting...')
+        const { name, email, message } = e.target.elements
+        let conFom = {
+            name: name.value,
+            email: email.value,
+            message: message.value,
+        }
+        console.log(conFom)
     }
-
     return (
-        <form className="contact-form"
-            action={FORM_ENDPOINT}
-            onSubmit={handleSubmit}
-            method="POST"
-            target="_blank"
-        >
-            <div className="mb-3 pt-0">
-                <input
-                    type="text"
-                    placeholder="Your name"
-                    name="name"
-                    className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
-                    required
-                />
-            </div>
-            <div className="mb-3 pt-0">
-                <input
-                    type="email"
-                    placeholder="Email"
-                    name="email"
-                    className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
-                    required
-                />
-            </div>
-            <div className="mb-3 pt-0">
-        <textarea
-            placeholder="Your message"
-            name="message"
-            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
-            required
-        />
-            </div>
-            <div className="mb-3 pt-0">
-                <button type="button" className="btn btn-outline-secondary" data-mdb-ripple-color="dark">Send a message</button>
-            </div>
-        </form>
-    );
-};
-
-export default ContactForm;
+        <div className="container mt-5">
+            <h2 className="mb-3">React Contact Form Component Example</h2>
+            <form onSubmit={onSubmit}>
+                <div className="mb-3">
+                    <label className="form-label" htmlFor="name">
+                        Name
+                    </label>
+                    <input className="form-control" type="text" id="name" required />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label" htmlFor="email">
+                        Email
+                    </label>
+                    <input className="form-control" type="email" id="email" required />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label" htmlFor="message">
+                        Message
+                    </label>
+                    <textarea className="form-control" id="message" required />
+                </div>
+                <button className="btn btn-danger" type="submit">
+                    {formStatus}
+                </button>
+            </form>
+        </div>
+    )
+}
+export default ContactForm

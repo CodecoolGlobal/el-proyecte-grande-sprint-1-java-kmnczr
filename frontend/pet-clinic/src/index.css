@@ -19,7 +19,6 @@ code {
 }
 
 .flexcontainer {
-  background-color: white;
   display: flex;
   justify-content: space-around;  
   align-items: center
@@ -198,5 +197,9 @@ form > .button:hover {
 }
 
 .logged-out-text {
+  text-align: center;
+}
+
+.container mt-5 {
   text-align: center;
 }
