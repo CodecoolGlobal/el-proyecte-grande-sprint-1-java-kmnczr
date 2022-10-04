@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ListAllOwners from './components/owner/ListAllOwners'
-import Header from './components/Header'
+import Header from './components/header/Header'
 import {apiGet, apiDelete, apiPost, apiPut} from './dataHandler'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import OwnerDetails from './components/owner/OwnerDetails';
@@ -22,7 +22,11 @@ import Users from './components/Users';
 import useAuth from './hooks/useAuth';
 import Logout from './components/Login/Logout';
 import useAxiosPrivate from "./hooks/useAxiosPrivate";
+import DeveloperInfo from "./components/developerInfo/DeveloperInfo";
 import ListSearchedOwners from "./components/owner/ListSearchedOwners"
+import SearchOwners from './components/owner/SearchOwners';
+import NavBarForClients from './components/forclients/NavBarForClients';
+
 
 
 function App() {
@@ -55,13 +59,17 @@ function App() {
   return (
     <div className='container'>
         
-        {auth.user!=null &&
+        {/* {auth.user!=null &&
             <Header />
-        }
+        } */}
 
         {(auth.roles==ROLES.Employee) &&
             <NavigationBar searchOwnerByName={searchOwnerByName} />
         }
+
+      {(auth.roles==ROLES.Client) &&
+                  <NavBarForClients />
+              }
         
           <Routes>
             <Route path="*" element={<NotFound />} />
@@ -79,6 +87,7 @@ function App() {
                         <Route index element={<ListAllOwners />} />
                         <Route path=":ownerId" element={<OwnerDetails  />} />
                         <Route path="add" element={<AddNewOwner /> } />
+                        <Route path="search" element={<SearchOwners searchOwnerByName={searchOwnerByName} /> } />
                         <Route path="search/:name" element={<ListSearchedOwners searchedOwners={searchedOwners}/> } />
                   </Route>
 
@@ -94,6 +103,7 @@ function App() {
               <Route element={<RequireAuth allowedRoles={[ROLES.Employee, ROLES.Client]} />}>
                 <Route path="/client/pets" element={<ClientPets />} />
                 <Route path="/client/pet/:petId" element={<ClientPetDetails />} />
+                <Route path="/developers" element={<DeveloperInfo />} />
                 
               </Route>
        
