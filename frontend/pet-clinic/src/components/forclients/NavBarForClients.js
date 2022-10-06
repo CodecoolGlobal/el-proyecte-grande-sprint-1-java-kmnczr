@@ -25,7 +25,7 @@ const NavBarForClients = () => {
 
         <Navbar bg="light" expand="lg" sticky="top">
             <Container fluid>
-                <Link to={"/"}><Image roundedCircle src="https://media.istockphoto.com/vectors/pet-logo-design-template-pet-house-pet-clinic-pet-care-or-other-pet-vector-id1139195687?k=20&m=1139195687&s=170667a&w=0&h=rFD6rAg7K2kti0kQWMifhsC52q06RyMuD9MDg5ywB8M=" width={80} /></Link>
+                <Link to={"/client/pets"}><Image roundedCircle src="https://media.istockphoto.com/vectors/pet-logo-design-template-pet-house-pet-clinic-pet-care-or-other-pet-vector-id1139195687?k=20&m=1139195687&s=170667a&w=0&h=rFD6rAg7K2kti0kQWMifhsC52q06RyMuD9MDg5ywB8M=" width={80} /></Link>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -41,13 +41,13 @@ const NavBarForClients = () => {
                         <Link to={"/developers"}><Nav.Link href="/developers">About the developers</Nav.Link></Link>
                         
                     </Nav>
-                   
+
                     <Nav
                         className="me-auto my-2 my-lg-0"
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Link to={"/"}><ProfilePic /></Link>
+                        <ProfilePic />
                     <Link to={"/logout"}><Button type="submit" variant="secondary">Log out</Button></Link>
                     </Nav>
 
