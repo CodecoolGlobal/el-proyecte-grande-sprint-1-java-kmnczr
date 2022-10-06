@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import AuthContext from "../../context/AuthProvider";
 import { useContext } from "react";
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
-import { Link, useParams, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import PetCardForClients from "./PetCardForClients"
 
 const ClientPets = () => {
@@ -54,59 +54,55 @@ const ClientPets = () => {
     <div>
     
         <div>
-
-        <br />
         <br/>
 
         {(pets.length==0) &&
         <div>
             <h2>Currently I don't have any pets in the system.</h2>
             </div> }
-            
         {(pets.length!=0) &&
             <div>
             <br/>
-  
-  
+                <h1 className="add-label">My pets</h1>
                 <div className='flexcontainer'>
                 {pets.map(pet => {
                 return (
-                  <div key={pet.id}>
-                    <PetCardForClients pet={pet} />
-                  </div>
+                    <ul className="cards">
+                      <div key={pet.id}>
+                        <PetCardForClients pet={pet} />
+                      </div>
+                    </ul>
                 );
               })}
                 </div>
-  
             </div>
         }
-
 <br/>
 <hr></hr>
 <br/>
-    
-        <h3>The clinick has the the following information about me: </h3><br/>
-        <p>First name: <strong>{owner.firstName} </strong></p>
-        <p>Last name: {owner.lastName} </p>
-        <p>E-mail address: {owner.email} </p>
-        <p>Phone number: {owner.phoneNumber} </p>
 
-           
-    </div>
+            <h1 className={"add-label"}>My details</h1><br/>
+            <div className='flexcontainer profile-container'>
+                <div className="card profile-card">
+                    <div className="container profile-container">
+                        <img className={"profile-img"}
+                             src="https://smartblogger.com/wp-content/uploads/2020/12/client-relationships.jpg"
+                             alt="profile-img"></img>
+                        <h2 className={"profile-h2"}>{owner.firstName +" "+owner.lastName}</h2>
+                        <small>Owner id: {owner.id}</small><br/>
+                        <small>{owner.email}</small><br/>
+                        <small>{owner.phoneNumber}</small><br/>
+                        <div className="bar">
+                            <br/><br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-  
-
-    <div>
-        <br />
-       
-    
     </div>
     <hr></hr>
-
-         
     </div>
     </div>
-
   )
 }
 
