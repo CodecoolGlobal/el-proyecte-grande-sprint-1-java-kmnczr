@@ -4,6 +4,7 @@ import myImage from '../../../src/images/dog_and_cat_2.jpg'
 import Table from 'react-bootstrap/Table';
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import { Link, useParams, useNavigate } from 'react-router-dom'
+import UpdatePet from "../pet/UpdatePet";
 
 
 
@@ -47,37 +48,30 @@ const ClientPetDetails = () => {
 
   return (
     <div>
+        <h1 className="add-label">Pet details</h1>
     <div className='flexcontainer'>
-    
-        <div>
 
-        <br />
-        <br/>
-    
-        <h1>Pet Profile: </h1><br/>
-        <p>Pet Id: {pet.id} </p>
-        <p>Name: <strong>{pet.name} </strong></p>
-        <p>Birth date: {pet.birthDate} </p>
-        <p>Pet type: {pet.type} </p>
-        <p>Age:   {getAge(pet.birthDate)} </p>
-            
-    </div>
+        <div className='flexcontainer profile-container'>
 
-   
-
-    <div>
-        <br />
-       
-    <img src={myImage} width={350} alt="doctor animals"/>
-    </div>
-
-    
+            <div className="card profile-card">
+                <div className="container profile-container">
+                    <img className={"profile-img"}
+                         src="https://kb.rspca.org.au/wp-content/uploads/2021/07/collie-beach-bokeh.jpg"
+                         alt="profile-img"></img>
+                    <h2 className={"profile-h2"}>{pet.name}</h2>
+                    <small>Pet id: {pet.id}</small><br/>
+                    <small>{pet.birthDate}</small><br/>
+                    <small>{pet.type}</small><br/>
+                    <small>Age: {getAge(pet.birthDate)}</small><br/>
+                </div>
+            </div>
+        </div>
     
     </div>
     <hr></hr>
 
     <div>
-    <h1>Visits of the pet:</h1><br/>
+        <h1 className="add-label">Visits of the pet</h1><br/>
 
 
 <Table striped bordered hover>
@@ -102,11 +96,10 @@ const ClientPetDetails = () => {
         })}
         </tbody>
       </Table>
-
+    <br/>
+    </div>
     </div>
 
-
-    </div>
   )
 }
 
