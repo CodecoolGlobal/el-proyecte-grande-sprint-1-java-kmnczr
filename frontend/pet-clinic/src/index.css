@@ -9,7 +9,7 @@ body {
 
 html {
   margin:    0 auto;
-  max-width: 1000px;
+  max-width: 1150px;
 }
 
 
@@ -20,6 +20,7 @@ code {
 
 .flexcontainer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;  
   align-items: center
 }
@@ -32,7 +33,7 @@ code {
 .container {
   width: 400px;
   margin: auto;
-  border: 3px solid lightgray;
+  border: 3px solid lightgray; 
 }
 
 body {
@@ -40,7 +41,7 @@ body {
   -webkit-background-size: 100%;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: 69.4%;
+  background-size: 91.5%;
   font-family: 'Roboto', Tahoma, Arial, sans-serif;
   line-height: 1.5;
   font-size: 13px;
@@ -106,9 +107,9 @@ form > .button:hover {
 }
 
 .profile-img {
-  width: 180px;
+  /* width: 180px; */
   height: 180px;
-  border-radius: 50%;
+  border-radius: 15%;
   border: 10px solid #ecf0fc;
 }
 

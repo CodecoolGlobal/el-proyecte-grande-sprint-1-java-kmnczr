@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from 'react'
-import myImage from '../../../src/images/dog_and_cat_2.jpg'
+import profileImage from '../../../src/images/client.jpg'
 import UpdateUser from "./UpdateUser";
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import PetCard from '../pet/PetCard';
@@ -57,7 +57,8 @@ const OwnerDetails = () => {
         <div className="card profile-card">
             <div className="container profile-container">
                 <img className={"profile-img"}
-                    src="https://www.gratefulweb.com/sites/default/files/images/articles/unnamed%2839%29_0.jpg"
+                    // src={profileImage}
+                    src="https://smartblogger.com/wp-content/uploads/2020/12/client-relationships.jpg"
                     alt="profile-img"></img>
                 <h2 className={"profile-h2"}>{owner.firstName +" "+owner.lastName}</h2>
                 <small>Owner id: {owner.id}</small><br/>

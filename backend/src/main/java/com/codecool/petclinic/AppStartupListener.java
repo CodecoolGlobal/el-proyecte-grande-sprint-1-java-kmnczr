@@ -34,22 +34,24 @@ public class AppStartupListener implements ApplicationListener <ContextRefreshed
         Owner owner1 = new Owner("John", "Lennon", "john@lennon.com", "+66 666 66 66");
         Owner owner2 = new Owner("Mariah", "Carey", "mary@cary.com", "+36 70 333 888");
         Owner owner3 = new Owner("Mick", "Jagger", "mick@jagger.org", "+381 9756 32");
-        Owner owner4 = new Owner("Janet", "Jackson", "jenny@jackson.org", "+42 55 88993");
-        Owner owner5 = new Owner("John", "Travolta", "john@faceoff.com", "+42 55 88993");
-        Owner owner6 = new Owner("Barbara", "Streisand", "barby@streisand.org", "+42 55 88993");
-        Owner owner7 = new Owner("Johnny", "Cash", "johnny@folsomprison.org", "+42 55 88993");
-        Owner owner8 = new Owner("Peter", "Mahjohng", "jenny@jackson.org", "+42 55 88993");
+        Owner owner4 = new Owner("Janet", "Jackson", "jenny@jackson.org", "+47 55 88993");
+        Owner owner5 = new Owner("John", "Travolta", "john@faceoff.com", "+52 55 88993");
+        Owner owner6 = new Owner("Barbara", "Streisand", "barby@streisand.org", "+12 55 88993");
+        Owner owner7 = new Owner("Johnny", "Cash", "johnny@folsomprison.org", "+12 55 11993");
+        Owner owner8 = new Owner("Peter", "Mahjohng", "jenny@jackson.org", "+42 55 03953");
+        Owner owner9 = new Owner("John", "Bon Jovi", "jon@bonjovi.org", "+42 55 1234");
 
         Pet pet1 = new Pet("Fluffy", LocalDate.of(2022, 8, 11), PetType.DOG );
         Pet pet2 = new Pet("Bunny", LocalDate.of(2017, 4, 3), PetType.BUNNY );
         Pet pet3 = new Pet("Kitty", LocalDate.of(2020, 1, 16), PetType.CAT );
         Pet pet4 = new Pet("Crocky", LocalDate.of(2019, 12, 27), PetType.CROCODILE );
+        Pet pet5 = new Pet("Nemo", LocalDate.of(2019, 12, 27), PetType.FISH );
 
         Visit visit1 = new Visit(TreatmentType.VACCINATION, "Veszettség elleni oltas.", 20);
-        Visit visit2 = new Visit(TreatmentType.DENTAL_TREATMENT, "Foghuzas", 30);
-        Visit visit3 = new Visit(TreatmentType.SURGERY, "Foghuzas", 30);
-        Visit visit4 = new Visit(TreatmentType.DENTAL_TREATMENT, "Foghuzas", 30);
-        Visit visit5 = new Visit(TreatmentType.CONSULTATION, "Consultation", 10);
+        Visit visit2 = new Visit(TreatmentType.DENTAL_TREATMENT, "Pull out a teeth (L3).", 30);
+        Visit visit3 = new Visit(TreatmentType.SURGERY, "Identity change.", 30);
+        Visit visit4 = new Visit(TreatmentType.DENTAL_TREATMENT, "Teeth whitening", 30);
+        Visit visit5 = new Visit(TreatmentType.CONSULTATION, "Consultation about making small puppies.", 10);
 
         pet1.addVisit(visit1);
         pet1.addVisit(visit2);
@@ -58,6 +60,7 @@ public class AppStartupListener implements ApplicationListener <ContextRefreshed
         pet3.addVisit(visit3);
 
         owner1.addPet(pet1);
+        owner1.addPet(pet5);
         owner2.addPet(pet2);
         owner2.addPet(pet4);
         owner3.addPet(pet3);
@@ -70,6 +73,7 @@ public class AppStartupListener implements ApplicationListener <ContextRefreshed
         ownerRepository.save(owner6);
         ownerRepository.save(owner7);
         ownerRepository.save(owner8);
+        ownerRepository.save(owner9);
 
         userService.saveUser(new AppUser(null, "Angi Doktor", "angi@petclinic.com", "aaaa", new ArrayList<>()));
         userService.saveUser(new AppUser(null, "Kristof Doktor", "kristof@petclinic.com", "aaaa", new ArrayList<>()));

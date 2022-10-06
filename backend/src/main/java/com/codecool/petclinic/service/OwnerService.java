@@ -5,6 +5,7 @@ import com.codecool.petclinic.model.DTOs.OwnerDTO;
 import com.codecool.petclinic.model.Owner;
 import com.codecool.petclinic.repository.OwnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class OwnerService {
     }
 
     public List<Owner> getAllOwners() {
-        List<Owner> owners = ownerRepository.findAll();
+        List<Owner> owners = ownerRepository.findAll(Sort.by(Sort.Direction.ASC, "lastName"));
         return owners;
     }
 
