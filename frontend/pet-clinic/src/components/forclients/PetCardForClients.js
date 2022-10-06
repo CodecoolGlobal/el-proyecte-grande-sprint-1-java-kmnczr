@@ -8,6 +8,7 @@ import bunnyImage from '../../../src/images/rabbit.jpg'
 import fishImage from '../../../src/images/goldfish.jpg'
 
 
+
 function PetCardForClients({pet}) {
 
   const chooseImage = () => {
@@ -35,7 +36,9 @@ const petImage = chooseImage()
       <li>
         <Link to={`/client/pet/${pet.id}`}>
           <a href="" className="card" style={{height: 300, width: 300}}>
+
             <img src={petImage} className="card__image" alt=""/>
+
             <div className="card__overlay">
               <div className="card__header">
                 <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
@@ -53,4 +56,6 @@ const petImage = chooseImage()
   );
 }
 
+
 export default PetCardForClients;
+

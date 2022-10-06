@@ -86,7 +86,9 @@ const ClientPets = () => {
                 <div className="card profile-card">
                     <div className="container profile-container">
                         <img className={"profile-img"}
+
                              src="https://smartblogger.com/wp-content/uploads/2020/12/client-relationships.jpg"
+
                              alt="profile-img"></img>
                         <h2 className={"profile-h2"}>{owner.firstName +" "+owner.lastName}</h2>
                         <small>Owner id: {owner.id}</small><br/>

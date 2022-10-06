@@ -82,7 +82,7 @@ const NavigationBar = ({searchOwnerByName}) => {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Link to={"/"}><ProfilePic /></Link>
+                        <ProfilePic />
                     <Link to={"/logout"}><Button style={{width:100}} type="submit" variant="secondary">Log out</Button></Link>
                     </Nav>
 

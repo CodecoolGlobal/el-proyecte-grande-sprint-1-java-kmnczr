@@ -5,6 +5,7 @@ import Table from 'react-bootstrap/Table';
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import UpdatePet from "../pet/UpdatePet";
+
 import dogImage from '../../../src/images/dog_profile.jpg'
 import catImage from '../../../src/images/cat_profile.jpg'
 import crocodileImage from '../../../src/images/crocodile.jpg'
@@ -73,14 +74,16 @@ const ClientPetDetails = () => {
 
   return (
     <div>
+        <h1 className="add-label">Pet details</h1>
     <div className='flexcontainer'>
-    
-        <div>
+
+        <div className='flexcontainer profile-container'>
 
             <div className="card profile-card">
                 <div className="container profile-container">
                     <img className={"profile-img"}
                          src={petImage}
+
                          alt="profile-img"></img>
                     <h2 className={"profile-h2"}>{pet.name}</h2>
                     <small>Pet id: {pet.id}</small><br/>
@@ -95,7 +98,7 @@ const ClientPetDetails = () => {
     <hr></hr>
 
     <div>
-    <h1>Visits of the pet:</h1><br/>
+        <h1 className="add-label">Visits of the pet</h1><br/>
 
 
 <Table striped bordered hover>
@@ -120,11 +123,10 @@ const ClientPetDetails = () => {
         })}
         </tbody>
       </Table>
-
+    <br/>
+    </div>
     </div>
 
-
-    </div>
   )
 }
 
