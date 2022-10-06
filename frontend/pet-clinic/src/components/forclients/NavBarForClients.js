@@ -48,7 +48,7 @@ const NavBarForClients = () => {
                         navbarScroll
                     >
                         <ProfilePic />
-                    <Link to={"/logout"}><Button type="submit" variant="secondary">Log out</Button></Link>
+                    <Link to={"/logout"}><Button style={{width:100}} type="submit" variant="secondary">Log out</Button></Link>
                     </Nav>
 
 
