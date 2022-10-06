@@ -6,6 +6,13 @@ import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import UpdatePet from "../pet/UpdatePet";
 
+import dogImage from '../../../src/images/dog_profile.jpg'
+import catImage from '../../../src/images/cat_profile.jpg'
+import crocodileImage from '../../../src/images/crocodile.jpg'
+import bunnyImage from '../../../src/images/rabbit.jpg'
+import fishImage from '../../../src/images/goldfish.jpg'
+
+
 
 
 const ClientPetDetails = () => {
@@ -21,6 +28,25 @@ const ClientPetDetails = () => {
 
     const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10)
 
+    const chooseImage = () => {
+      if (pet.type === "DOG") {
+        return dogImage
+      }
+      else if (pet.type === "CAT") {
+        return catImage
+      }
+      else if (pet.type === "BUNNY") {
+        return bunnyImage
+      }
+      else if (pet.type === "FISH") {
+        return fishImage
+      }
+      else {
+        return crocodileImage
+      }
+  }
+
+  const petImage = chooseImage()
 
     useEffect(() => {
       let isMounted = true;
@@ -56,7 +82,8 @@ const ClientPetDetails = () => {
             <div className="card profile-card">
                 <div className="container profile-container">
                     <img className={"profile-img"}
-                         src="https://kb.rspca.org.au/wp-content/uploads/2021/07/collie-beach-bokeh.jpg"
+                         src={petImage}
+
                          alt="profile-img"></img>
                     <h2 className={"profile-h2"}>{pet.name}</h2>
                     <small>Pet id: {pet.id}</small><br/>
