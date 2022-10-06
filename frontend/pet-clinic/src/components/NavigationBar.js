@@ -23,7 +23,7 @@ const NavigationBar = ({searchOwnerByName}) => {
 
     return (
 
-        <Navbar bg="light" expand="lg" sticky="top">
+        <Navbar fluid fixed="top" bg="light" expand="lg" sticky="top">
             <Container fluid>
 
                 <Link to={"/"}><Image roundedCircle src="https://i.pinimg.com/originals/09/0a/1b/090a1b4779b5b4c51ca6c7f85c838c2b.png" width={80} /></Link>
