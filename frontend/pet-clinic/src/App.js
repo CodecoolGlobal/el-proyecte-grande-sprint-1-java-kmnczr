@@ -22,8 +22,10 @@ import Users from './components/Users';
 import useAuth from './hooks/useAuth';
 import Logout from './components/Login/Logout';
 import useAxiosPrivate from "./hooks/useAxiosPrivate";
+import ContactUs from "./components/contact/ContactUs";
+import QuestionAnswer from "./components/FAQs/QuestionAnswer";
+import ListSearchedOwners from "./components/owner/ListSearchedOwners";
 import DeveloperInfo from "./components/developerInfo/DeveloperInfo";
-import ListSearchedOwners from "./components/owner/ListSearchedOwners"
 import SearchOwners from './components/owner/SearchOwners';
 import NavBarForClients from './components/forclients/NavBarForClients';
 
@@ -70,15 +72,17 @@ function App() {
       {(auth.roles==ROLES.Client) &&
                   <NavBarForClients />
               }
-        
+
           <Routes>
             <Route path="*" element={<NotFound />} />
             <Route path="/login" element={<Login />} />
             <Route path="/unauthorized" element={<Unauthorized />} />
             <Route path="/users" element={<Users />} />
             <Route path="/logout" element={<Logout />} />
-            
-          
+            <Route path="/contactus" element={<ContactUs />} />
+            <Route path="/faqs" element={<QuestionAnswer />} />
+
+
               {/* we want to protect these routes */}
               {/* Accessible only to EMPLOYEES */}
               <Route element={<RequireAuth allowedRoles={[ROLES.Employee]} />}>
@@ -104,7 +108,7 @@ function App() {
                 <Route path="/client/pets" element={<ClientPets />} />
                 <Route path="/client/pet/:petId" element={<ClientPetDetails />} />
                 <Route path="/developers" element={<DeveloperInfo />} />
-                
+
               </Route>
        
           </Routes>

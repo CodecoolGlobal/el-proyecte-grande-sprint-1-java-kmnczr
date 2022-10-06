@@ -43,7 +43,7 @@ body {
   -webkit-background-size: 100%;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: 91.5%;
+  background-size: cover;
   font-family: 'Roboto', Tahoma, Arial, sans-serif;
   line-height: 1.5;
   font-size: 13px;
@@ -108,6 +108,9 @@ form > .button:hover {
   text-align: center;
 }
 
+.footer-text {
+  text-align: center;
+}
 .profile-img {
   /* width: 180px; */
   height: 180px;
@@ -186,4 +189,20 @@ form > .button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.notfound {
+  text-align: center;
+}
+
+.unauth {
+  text-align: center;
+}
+
+.logged-out-text {
+  text-align: center;
+}
+
+.container mt-5 {
+  text-align: center;
 }

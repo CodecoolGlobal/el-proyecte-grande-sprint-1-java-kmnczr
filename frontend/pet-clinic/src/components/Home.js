@@ -8,7 +8,7 @@ import "../css/card.css"
 const Home = () => {
   return (
       <ul className="cards">
-          <li>
+          <li style={{width: 250}}>
               <Link to={"/owners"} >
               <a href="" className="card" style={{height:250, width:250}}>
                   <img src="https://www.caterpillartobutterflyentrepreneurship.com/wp-content/uploads/2020/10/clients.jpg" className="card__image" alt=""/>
@@ -27,7 +27,7 @@ const Home = () => {
               </a>
               </Link>
           </li>
-          <li>
+          <li  style={{width: 250}}>
               <Link to={"/owners/add"}>
                   <a href="" className="card" style={{height:250, width:250}}>
                       <img src="https://img.freepik.com/free-photo/handshake-close-up-executives_1098-1384.jpg?w=1060&t=st=1663919416~exp=1663920016~hmac=7d3d216da360f4a439d68bb6d65fc8a18a10150f7e33da206d4086d147f2b7fc" className="card__image" alt=""/>
@@ -46,7 +46,7 @@ const Home = () => {
                   </a>
               </Link>
           </li>
-          <li>
+          <li  style={{width: 250}}>
               <Link to={"/owners/search"}>
                   <a href="" className="card" style={{height:250, width:250}}>
                       <img src="https://i.pinimg.com/originals/53/fa/8b/53fa8b6031ed376eefd7415920e74c59.jpg" className="card__image" alt=""/>

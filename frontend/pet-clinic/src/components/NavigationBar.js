@@ -27,7 +27,7 @@ const NavigationBar = ({searchOwnerByName}) => {
             <Container fluid>
 
                 <Link to={"/"}><Image roundedCircle src="https://i.pinimg.com/originals/09/0a/1b/090a1b4779b5b4c51ca6c7f85c838c2b.png" width={80} /></Link>
-            
+
             <Link to={"/"}><Navbar.Brand href="/">Pet Clinic</Navbar.Brand></Link>
 
                 <Navbar.Toggle aria-controls="navbarScroll" />
@@ -52,6 +52,9 @@ const NavigationBar = ({searchOwnerByName}) => {
                             <NavDropdown.Divider />
                             <Link to={"/"}><NavDropdown.Item href="/">FAQs</NavDropdown.Item></Link>
                             <NavDropdown.Divider />
+                            <Link to={"/"}><NavDropdown.Item href="/">Developers of the application</NavDropdown.Item></Link>
+                            <Link to={"/contactus"}><NavDropdown.Item href="/">Contact the Developers</NavDropdown.Item></Link>
+                            <Link to={"/faqs"}><NavDropdown.Item href="/">FAQs</NavDropdown.Item></Link>
                             <Link to={"/"}><NavDropdown.Item href="/">FAQs</NavDropdown.Item></Link>
                             <NavDropdown.Divider />
                             <Link to={`/`}><NavDropdown.Item href="#action4">
