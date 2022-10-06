@@ -13,4 +13,5 @@ public interface OwnerRepository extends JpaRepository<Owner, Long> {
     List<Owner> findOwnerByFirstOrLastName(String name);
 
     Owner findOwnerByEmail(String email);
+
 }
