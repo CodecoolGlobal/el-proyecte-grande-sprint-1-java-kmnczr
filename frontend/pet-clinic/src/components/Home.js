@@ -9,8 +9,8 @@ const Home = () => {
   return (
       <ul className="cards">
           <li>
-              <Link to={"/owners"}>
-              <a href="" className="card" style={{height:350, width:350}}>
+              <Link to={"/owners"} >
+              <a href="" className="card" style={{height:250, width:250}}>
                   <img src="https://www.caterpillartobutterflyentrepreneurship.com/wp-content/uploads/2020/10/clients.jpg" className="card__image" alt=""/>
                   <div className="card__overlay">
                       <div className="card__header">
@@ -29,8 +29,8 @@ const Home = () => {
           </li>
           <li>
               <Link to={"/owners/add"}>
-                  <a href="" className="card" style={{height:350, width:350}}>
-                      <img src="https://wilsonprintingusa.com/wp-content/uploads/2015/03/Welcome-Packs-for-Businesses.jpg" className="card__image" alt=""/>
+                  <a href="" className="card" style={{height:250, width:250}}>
+                      <img src="https://img.freepik.com/free-photo/handshake-close-up-executives_1098-1384.jpg?w=1060&t=st=1663919416~exp=1663920016~hmac=7d3d216da360f4a439d68bb6d65fc8a18a10150f7e33da206d4086d147f2b7fc" className="card__image" alt=""/>
                       <div className="card__overlay">
                           <div className="card__header">
                               <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
@@ -48,7 +48,7 @@ const Home = () => {
           </li>
           <li>
               <Link to={"/owners/search"}>
-                  <a href="" className="card" style={{height:350, width:350}}>
+                  <a href="" className="card" style={{height:250, width:250}}>
                       <img src="https://i.pinimg.com/originals/53/fa/8b/53fa8b6031ed376eefd7415920e74c59.jpg" className="card__image" alt=""/>
                       <div className="card__overlay">
                           <div className="card__header">
